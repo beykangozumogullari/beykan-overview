@@ -3,19 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beykan Gözümoğulları | Links</title>
+  <title>Beykan Gözümoğulları | Links & Art</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-900 font-sans p-6">
+<body class="bg-gray-50 text-gray-900 font-sans p-6">
   <main class="max-w-4xl mx-auto">
-    <header class="text-center mb-12">
-      <h1 class="text-4xl font-bold">Beykan Gözümoğulları</h1>
-      <p class="text-lg text-gray-600 mt-2">Useful tools, apps, and SAP MDG resources 👇</p>
-    </header>
+    <!-- Hero Card: Photo + Intro + Featured Art -->
+    <section class="bg-white rounded-2xl shadow p-6 mb-12">
+      <div class="grid sm:grid-cols-2 gap-6 items-center">
+        <!-- Replace src with your uploaded photo path -->
+        <img src="assets/beykan-photo.jpg" alt="Beykan Gözümoğulları" class="w-full h-auto rounded-lg object-cover">
+        <div>
+          <h2 class="text-3xl font-bold mb-2">I'm Beykan 👋</h2>
+          <p class="text-gray-700 mb-4">By day, I deliver SAP MDG solutions; by night, I bring ideas to life on canvas. Welcome to my corner of tech and art!</p>
+          <div class="flex space-x-4">
+            <!-- Example social icons (optional) -->
+            <a href="https://github.com/beykangozumogullari" target="_blank" class="underline">GitHub</a>
+            <a href="https://www.linkedin.com/in/beykan" target="_blank" class="underline">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8">
+        <h3 class="text-2xl font-semibold mb-3">Featured Artwork</h3>
+        <!-- Replace src with your art image path -->
+        <img src="assets/beykan-art.jpg" alt="Featured Artwork" class="w-full h-auto rounded-lg object-cover">
+      </div>
+    </section>
 
+    <!-- SAP MDG Solutions Section -->
     <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4">SAP MDG Solutions</h2>
-      <div class="grid sm:grid-cols-2 gap-6">
+      <button onclick="toggleSection('mdg-solutions', 'icon-mdg')" class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
+        <span class="text-2xl font-semibold">SAP MDG Solutions</span>
+        <span id="icon-mdg" class="transform transition-transform">&#9660;</span>
+      </button>
+      <div id="mdg-solutions" class="mt-4 grid sm:grid-cols-2 gap-6 hidden">
         <a href="#" class="block p-5 border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
           <h3 class="text-xl font-semibold">Company Code Creation</h3>
           <p class="text-sm text-gray-600 mt-1">A guide on extending company codes using MDG-F in CR types.</p>
@@ -24,13 +45,16 @@
           <h3 class="text-xl font-semibold">BP Role Configuration</h3>
           <p class="text-sm text-gray-600 mt-1">Steps to configure FLVN00 and FLCU00 roles in MDG-BP flow.</p>
         </a>
-        <!-- Add more SAP MDG solutions here -->
       </div>
     </section>
 
+    <!-- SAP CDS Examples Section -->
     <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4">SAP CDS Examples</h2>
-      <div class="grid sm:grid-cols-2 gap-6">
+      <button onclick="toggleSection('cds-examples', 'icon-cds')" class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
+        <span class="text-2xl font-semibold">SAP CDS Examples</span>
+        <span id="icon-cds" class="transform transition-transform">&#9660;</span>
+      </button>
+      <div id="cds-examples" class="mt-4 grid sm:grid-cols-2 gap-6 hidden">
         <a href="#" class="block p-5 border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
           <h3 class="text-xl font-semibold">Custom CDS View for BP Address</h3>
           <p class="text-sm text-gray-600 mt-1">Example of a CDS view combining business partner and address data.</p>
@@ -39,7 +63,6 @@
           <h3 class="text-xl font-semibold">Analytical CDS View</h3>
           <p class="text-sm text-gray-600 mt-1">Demo of CDS view with annotations for analytics and KPI tracking.</p>
         </a>
-        <!-- Add more CDS examples here -->
       </div>
     </section>
 
@@ -47,5 +70,19 @@
       Built by Beykan • <a href="mailto:your.email@example.com" class="underline">Contact me</a>
     </footer>
   </main>
+
+  <script>
+    function toggleSection(sectionId, iconId) {
+      const section = document.getElementById(sectionId);
+      const icon = document.getElementById(iconId);
+      if (section.classList.contains('hidden')) {
+        section.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        section.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
 </body>
 </html>
