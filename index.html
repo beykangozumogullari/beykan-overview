@@ -5,40 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beykan Gözümoğulları | Links & Art</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            'light-bg': '#f9f9f9',
-            'dark-bg': '#0f172a'
-          }
-        }
-      }
-    }
-  </script>
 </head>
-<body class="bg-light-bg dark:bg-dark-bg text-gray-900 dark:text-gray-100 font-sans p-6 transition-colors duration-300">
+<body class="bg-gray-50 text-gray-900 font-sans p-6">
   <main class="max-w-4xl mx-auto">
     <!-- Hero Card: Photo + Intro + Featured Art -->
-    <section class="bg-white dark:bg-slate-800 rounded-2xl shadow p-6 mb-12">
+    <section class="bg-white rounded-2xl shadow p-6 mb-12">
       <div class="grid sm:grid-cols-2 gap-6 items-end">
+        <!-- Photo: smaller size -->
         <img src="assets/beykan-photo.jpg" alt="Beykan Gözümoğulları" class="max-w-xs w-full rounded-lg object-cover">
         <div>
           <h2 class="text-3xl font-bold mb-2">I'm Beykan 👋</h2>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">By day, I deliver SAP MDG solutions; by night, I bring ideas to life on canvas. Welcome to my corner of tech and art!</p>
+          <p class="text-gray-700 mb-4">By day, I deliver SAP MDG solutions; by night, I bring ideas to life on canvas. Welcome to my corner of tech and art!</p>
           <div class="flex space-x-4 mb-6">
             <a href="https://github.com/beykangozumogullari" target="_blank" class="underline">GitHub</a>
             <a href="https://www.linkedin.com/in/beykan" target="_blank" class="underline">LinkedIn</a>
           </div>
+          <!-- Featured Artwork moved under links, smaller size -->
           <h3 class="text-2xl font-semibold mb-3">Featured Artwork</h3>
           <img src="assets/beykan-art.jpg" alt="Featured Artwork" class="w-full rounded-lg object-cover">
         </div>
       </div>
     </section>
-    <!-- Other sections omitted for brevity in preview -->
+
+    <!-- SAP MDG Solutions Section -->
+    <section class="mb-10">
+      <button onclick="toggleSection('mdg-solutions', 'icon-mdg')" class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
+        <span class="text-2xl font-semibold">SAP MDG Solutions</span>
+        <span id="icon-mdg" class="transform transition-transform">&#9660;</span>
+      </button>
+      <div id="mdg-solutions" class="mt-4 grid sm:grid-cols-2 gap-6 hidden">
+        <a href="#" class="block p-5 border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
+          <h3 class="text-xl font-semibold">Company Code Creation</h3>
+          <p class="text-sm text-gray-600 mt-1">A guide on extending company codes using MDG-F in CR types.</p>
+        </a>
+        <a href="#" class="block p-5 border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
+          <h3 class="text-xl font-semibold">BP Role Configuration</h3>
+          <p class="text-sm text-gray-600 mt-1">Steps to configure FLVN00 and FLCU00 roles in MDG-BP flow.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- SAP CDS Examples Section -->
+    <section class="mb-10">
+      <button onclick="toggleSection('cds-examples', 'icon-cds')" class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
+        <span class="text-2xl font-semibold">SAP CDS Examples</span>
+        <span id="icon-cds" class="transform transition-transform">&#9660;</span>
+      </button>
+      <div id="cds-examples" class="mt-4 grid sm:grid-cols-2 gap-6 hidden">
+        <a href="#" class="block p-5 border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
+          <h3 class="text-xl font-semibold">Custom CDS View for BP Address</h3>
+          <p class="text-sm text-gray-600 mt-1">Example of a CDS view combining business partner and address data.</p>
+        </a>
+        <a href="#" class="block p-5 border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
+          <h3 class="text-xl font-semibold">Analytical CDS View</h3>
+          <p class="text-sm text-gray-600 mt-1">Demo of CDS view with annotations for analytics and KPI tracking.</p>
+        </a>
+      </div>
+    </section>
+
+    <footer class="mt-16 text-center text-sm text-gray-500">
+      Built by Beykan • <a href="mailto:your.email@example.com" class="underline">Contact me</a>
+    </footer>
   </main>
-  <!-- Scripts omitted in preview -->
+
+  <script>
+    function toggleSection(sectionId, iconId) {
+      const section = document.getElementById(sectionId);
+      const icon = document.getElementById(iconId);
+      if (section.classList.contains('hidden')) {
+        section.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        section.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
 </body>
 </html>
