@@ -17,12 +17,6 @@
           <div class="flex space-x-4 mb-6">
             <a href="https://www.linkedin.com/in/beykan" target="_blank" class="underline">LinkedIn</a>
           </div>
-			  <div class="mt-4">
-    <a href="assets/my-consultant-profile.pdf" download
-       class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition">
-      📄 Download My Resume
-    </a>
-  </div>
           <h3 class="text-2xl font-semibold mb-3">Featured Artwork</h3>
           <img src="assets/beykan-art.jpg" alt="Featured Artwork" class="w-full rounded-lg object-cover">
         </div>
@@ -45,11 +39,11 @@
 
     <!-- Integrating CDQ Solutions into SAP Section -->
     <section class="mb-10">
-      <button onclick="toggleSection('cds-examples', 'icon-cds')" class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
+      <button onclick="toggleSection('cdq-solutions', 'icon-cdq')" class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
         <span class="text-2xl font-semibold">Integrate CDQ into SAP MDG Classic Mode</span>
-        <span id="icon-cds" class="transform transition-transform">&#9660;</span>
+        <span id="icon-cdq" class="transform transition-transform">&#9660;</span>
       </button>
-      <div id="cds-examples" class="mt-4 grid sm:grid-cols-2 gap-6 hidden">
+      <div id="cdq-solutions" class="mt-4 grid sm:grid-cols-2 gap-6 hidden">
         <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-members/bringing-cdq-to-sap-mdg-classic-mode-enabling-trusted-business-partner/ba-p/14147382" class="block p-5 border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
           <h3 class="text-xl font-semibold">Bringing CDQ to SAP MDG Classic Mode</h3>
           <p class="text-sm text-gray-600 mt-1">This article explores an approach to achieve that goal by integrating CDQ reference data in SAP Master Data Governance (MDG) classic mode.</p>
@@ -61,8 +55,22 @@
       </div>
     </section>
 
+    <!-- Resumes Section -->
+    <section class="mb-10">
+      <button onclick="toggleSection('download-resumes', 'icon-resume')" class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
+        <span class="text-2xl font-semibold">Resume</span>
+        <span id="icon-resume" class="transform transition-transform">&#9660;</span>
+      </button>
+      <div id="download-resumes" class="mt-4 grid sm:grid-cols-2 gap-6 hidden">
+	    <a href="assets/my-consultant-profile.pdf" download
+	       class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition">
+	      📄 Download My Consultant Profile
+	    </a>
+      </div>
+    </section>
+
     <footer class="mt-16 text-center text-sm text-gray-500">
-      Built by Beykan • <a href="mailto:your.email@example.com" class="underline">Contact me</a>
+      Built by Beykan • <a href="mailto:beykangozumogullari@gmail.com" class="underline">Contact me</a>
     </footer>
   </main>
 
