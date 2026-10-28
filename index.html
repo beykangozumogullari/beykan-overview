@@ -3,83 +3,795 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beykan Gözümoğulları | Links & Art</title>
+  <title>Beykan Gözümoğulları | Tech, Art &amp; Curiosity</title>
+  <meta name="description" content="A personal corner of tech and art: SAP MDG ideas, articles, certifications, and paintings by Beykan Gözümoğulları." />
+  <meta name="theme-color" content="#142B45" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Beykan Gözümoğulları | Tech, Art &amp; Curiosity" />
+  <meta property="og:description" content="SAP MDG by day, art after hours. Welcome to my corner of tech and creativity." />
+  <meta property="og:url" content="https://beykangozumogullari.github.io/beykan-overview/" />
+  <meta property="og:image" content="https://beykangozumogullari.github.io/beykan-overview/assets/beykan-photo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+
+    /* Restrained navy, slate, and muted-teal visual identity. */
+    :root {
+      --navy: #142B45;
+      --slate: #526276;
+      --teal: #0F7180;
+      --page: #F6F8FB;
+      --surface: #FFFFFF;
+      --surface-hover: #FAFCFE;
+      --edge: #DEE7EF;
+      --edge-hover: #B8D3DA;
+      --action: #1C4D78;
+      --action-hover: #153B5D;
+    }
+
+    .site-page {
+      background-color: var(--page);
+      color: var(--navy);
+    }
+
+    .intro-panel {
+      background-color: var(--surface);
+    }
+
+    .intro-panel h2,
+    .intro-panel h3,
+    .site-toggle span:first-child,
+    .site-card h3 {
+      color: var(--navy);
+    }
+
+    .intro-description,
+    .site-card p,
+    .site-footer {
+      color: var(--slate);
+    }
+
+    .site-toggle {
+      background-color: var(--surface);
+      border: 1px solid var(--edge);
+      text-align: left;
+    }
+
+    .site-toggle span:last-child {
+      color: var(--teal);
+    }
+
+    .site-card {
+      background-color: var(--surface);
+      border-color: var(--edge);
+    }
+
+    .site-toggle:hover,
+    .site-card:hover {
+      background-color: var(--surface-hover);
+      border-color: var(--edge-hover);
+    }
+
+    .site-download {
+      background-color: var(--action);
+    }
+
+    .site-download:hover {
+      background-color: var(--action-hover);
+    }
+
+    .site-footer a {
+      color: var(--teal);
+      text-underline-offset: 3px;
+      transition: color 200ms ease;
+    }
+
+    .site-footer a:hover {
+      color: #095561;
+    }
+
+    .site-footer a:focus-visible,
+    .site-toggle:focus-visible,
+    .site-card:focus-visible,
+    .site-download:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 3px;
+    }
+
+    /* Compact social profile icons, consistent with the site's soft elevation. */
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border: 1px solid var(--edge);
+      border-radius: 12px;
+      background-color: var(--surface);
+      color: var(--navy);
+      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.035),
+                  0 6px 15px rgba(15, 23, 42, 0.045);
+      transition: color 200ms ease, background-color 200ms ease,
+                  border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+    }
+
+    .social-link svg {
+      width: 21px;
+      height: 21px;
+      fill: currentColor;
+    }
+
+    .social-link--sap svg {
+      width: 27px;
+      height: 27px;
+    }
+
+    .social-link:hover {
+      color: var(--teal);
+      background-color: var(--surface-hover);
+      border-color: var(--edge-hover);
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.055),
+                  0 11px 22px rgba(15, 23, 42, 0.07);
+      transform: translateY(-2px);
+    }
+
+    .social-link:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .social-link {
+        transition: none;
+      }
+      .social-link:hover {
+        transform: none;
+      }
+    }
+
+    /* Soft, consistent elevation for sections, toggles, and cards. */
+    .soft-elevation {
+      box-shadow: 0 3px 8px rgba(15, 23, 42, 0.035),
+                  0 12px 28px rgba(15, 23, 42, 0.055);
+    }
+
+    .soft-elevation-interactive {
+      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04),
+                  0 9px 21px rgba(15, 23, 42, 0.055);
+      transition: box-shadow 220ms ease, transform 220ms ease, background-color 220ms ease;
+    }
+
+    .soft-elevation-interactive:hover {
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.055),
+                  0 14px 28px rgba(15, 23, 42, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .soft-elevation-interactive:focus-visible {
+      outline: 2px solid #94a3b8;
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .soft-elevation-interactive {
+        transition: none;
+      }
+      .soft-elevation-interactive:hover {
+        transform: none;
+      }
+    }
+
+    /* Small refinements: calm professional structure with a little warmth. */
+    :root {
+      --warm: #CE9C77;
+    }
+    .site-main {
+      padding-top: clamp(.15rem, 1.2vw, .75rem);
+    }
+    .intro-panel {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--edge);
+      background: linear-gradient(140deg, #fff 62%, #f8fcfc 100%);
+    }
+    .intro-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1.75rem;
+      width: min(190px, 42%);
+      height: 3px;
+      border-radius: 0 0 6px 6px;
+      background: linear-gradient(90deg, var(--teal), var(--warm));
+    }
+    .intro-heading {
+      font-size: clamp(2rem, 3.8vw, 2.7rem);
+      line-height: 1.12;
+      letter-spacing: -.04em;
+    }
+    .intro-description {
+      max-width: 44ch;
+      line-height: 1.7;
+    }
+    .profile-photo {
+      display: block;
+      border: 1px solid var(--edge);
+      box-shadow: 0 5px 18px rgba(20,43,69,.09);
+    }
+    .artwork-heading {
+      letter-spacing: -.025em;
+    }
+    .artwork-frame {
+      margin: 0;
+      padding: 5px;
+      border: 1px solid var(--edge);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(20,43,69,.06);
+    }
+    .artwork-photo {
+      display: block;
+    }
+    .site-toggle {
+      min-height: 70px;
+      border-radius: 14px;
+      gap: 1rem;
+    }
+    .site-toggle span:first-child {
+      font-size: clamp(1.12rem, 2.65vw, 1.42rem);
+      line-height: 1.35;
+      letter-spacing: -.022em;
+    }
+    .toggle-icon {
+      flex-shrink: 0;
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: #ecf5f5;
+      font-size: .83rem;
+      transition: transform 300ms ease, background-color 200ms ease;
+    }
+    .site-toggle[aria-expanded="true"] {
+      border-color: var(--edge-hover);
+    }
+    .site-toggle[aria-expanded="true"] .toggle-icon {
+      transform: rotate(180deg);
+      background: #e4f0f1;
+    }
+    .site-card {
+      border-radius: 14px;
+    }
+    .site-card h3 {
+      line-height: 1.35;
+      letter-spacing: -.018em;
+      transition: color 180ms ease;
+    }
+    .site-card p {
+      line-height: 1.6;
+    }
+    .site-card:hover h3, .site-card:focus-visible h3 {
+      color: var(--teal);
+    }
+    .accordion-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      visibility: hidden;
+      margin-top: 0;
+      transition: grid-template-rows 320ms cubic-bezier(.2,.75,.25,1),
+                  opacity 240ms ease, margin-top 320ms ease,
+                  visibility 320ms;
+    }
+    .accordion-panel[aria-hidden="false"] {
+      grid-template-rows: 1fr;
+      opacity: 1;
+      visibility: visible;
+      margin-top: 1rem;
+    }
+    .accordion-panel-inner {
+      min-height: 0;
+      overflow: hidden;
+    }
+    .site-download {
+      text-align: center;
+      text-decoration: none;
+    }
+    @media (max-width: 639px) {
+      .intro-panel {
+        margin-bottom: 2.5rem;
+      }
+      .profile-photo {
+        max-width: 100%;
+      }
+      .site-toggle {
+        min-height: 64px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .accordion-panel, .toggle-icon, .site-card h3 {
+        transition: none;
+      }
+    }
+
+    /* Editorial sections: clean and intentional, with just a little personality. */
+    html { scroll-behavior: smooth; }
+    .content-section { margin-bottom: 2.5rem; }
+    .section-eyebrow {
+      display: block;
+      margin-bottom: .45rem;
+      color: var(--teal);
+      font-size: .68rem;
+      font-weight: 760;
+      line-height: 1.5;
+      letter-spacing: .13em;
+    }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem 1rem;
+      margin-bottom: 1.35rem;
+    }
+    .section-heading h2, .downloads-copy h2 {
+      font-size: clamp(1.5rem, 3.3vw, 1.95rem);
+      letter-spacing: -.035em;
+      font-weight: 750;
+      line-height: 1.2;
+      color: var(--navy);
+    }
+    .section-heading p, .downloads-copy p {
+      margin-top: .4rem;
+      color: var(--slate);
+      line-height: 1.55;
+      font-size: .9rem;
+    }
+    .section-more {
+      color: var(--teal);
+      font-weight: 650;
+      text-decoration: none;
+      font-size: .875rem;
+      white-space: nowrap;
+      padding: .3rem 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 180ms ease;
+    }
+    .section-more:hover { border-color: currentColor; }
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .story-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      padding: 1.4rem;
+      background: #fff;
+      border: 1px solid var(--edge);
+      border-radius: 16px;
+      color: var(--navy);
+      text-decoration: none;
+      box-shadow: 0 3px 8px rgba(15,23,42,.035), 0 10px 24px rgba(15,23,42,.045);
+      transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+    }
+    .story-card:hover, .story-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: var(--edge-hover);
+      box-shadow: 0 7px 16px rgba(15,23,42,.045), 0 17px 30px rgba(15,23,42,.075);
+    }
+.story-category {
+      color: var(--teal);
+      background: #eef6f5;
+      padding: .3rem .65rem;
+      border-radius: 999px;
+      font-weight: 650;
+      font-size: .72rem;
+      letter-spacing: .015em;
+      margin-bottom: 1rem;
+    }
+    .story-card h3 {
+      font-size: clamp(1.05rem, 2.25vw, 1.35rem);
+      line-height: 1.33;
+      letter-spacing: -.025em;
+      font-weight: 740;
+      max-width: 47ch;
+    }
+    .story-card p {
+      color: var(--slate);
+      margin-top: .65rem;
+      line-height: 1.65;
+      font-size: .89rem;
+      max-width: 67ch;
+    }
+    .story-cta {
+      margin-top: auto;
+      padding-top: 1.15rem;
+      color: var(--teal);
+      font-weight: 720;
+      font-size: .85rem;
+    }
+    .story-arrow {
+      display: inline-block;
+      transition: transform 180ms ease;
+      font-size: 1.05em;
+    }
+    .story-card:hover .story-arrow { transform: translate(2px,-2px); }
+    .credentials-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border: 1px solid var(--edge);
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.35rem 1.5rem;
+      text-align: left;
+    }
+    .credentials-lead { display: flex; flex-direction: column; min-width: 0; }
+    .credentials-heading {
+      font-size: clamp(1.25rem, 2.8vw, 1.55rem);
+      letter-spacing: -.025em;
+      font-weight: 750;
+      line-height: 1.3;
+    }
+    .credentials-description {
+      color: var(--slate);
+      font-size: .85rem;
+      line-height: 1.5;
+      margin-top: .3rem;
+    }
+    .credentials-toggle[aria-expanded="true"] { border-color: var(--edge-hover); }
+    .credentials-toggle[aria-expanded="true"] .toggle-icon { transform: rotate(180deg); }
+    .credential-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+    }
+    .certification-aside {
+      grid-column: 1 / -1;
+      margin: .15rem .2rem 0;
+      color: #7e8b98;
+      font-size: .76rem;
+      font-style: italic;
+      line-height: 1.5;
+      text-align: right;
+    }
+    .credential-card {
+      min-width: 0;
+      display: flex;
+      align-items: flex-start;
+      gap: .8rem;
+      padding: 1rem;
+      border: 1px solid var(--edge);
+      border-radius: 13px;
+      background: #fff;
+      color: var(--navy);
+      text-decoration: none;
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+    .credential-card:hover { border-color: var(--edge-hover); transform: translateY(-2px); }
+    .credential-icon {
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 29px;
+      height: 29px;
+      border: 1px solid #b4d8d5;
+      border-radius: 9px;
+      color: var(--teal);
+      background: #edf7f5;
+      font-weight: 800;
+      font-size: .85rem;
+    }
+    .credential-copy { display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
+    .credential-area {
+      color: var(--teal);
+      font-size: .7rem;
+      font-weight: 750;
+      letter-spacing: .03em;
+    }
+    .credential-copy strong { font-size: 1rem; line-height: 1.3; }
+    .credential-copy > span:last-child { color: var(--slate); font-size: .81rem; line-height: 1.5; }
+    .credential-arrow { margin-left: auto; color: var(--teal); font-size: .95rem; }
+    .downloads-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem 1.8rem;
+      padding: 1.6rem;
+      border: 1px solid var(--edge);
+      border-radius: 17px;
+      background: linear-gradient(125deg, #fff 54%, #f4f8fa 100%);
+      box-shadow: 0 3px 14px rgba(15,23,42,.035);
+    }
+    .downloads-links { display: flex; flex-wrap: wrap; gap: .65rem; }
+    .download-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      min-height: 44px;
+      border-radius: 11px;
+      padding: .65rem .95rem;
+      font-size: .82rem;
+      font-weight: 700;
+      border: 1px solid #1C4D78;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    .download-link:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(20,43,69,.13); }
+    .download-link--primary { color: #fff; background: var(--action); }
+    .download-link--primary:hover { background: var(--action-hover); }
+    .download-link--secondary { color: var(--action); background: #fff; }
+    .download-link--secondary:hover { background: #f4f8fb; }
+    .artwork-heading-row { display: flex; align-items: end; justify-content: space-between; gap: .5rem; margin-bottom: .75rem; }
+    .artwork-heading-row .section-eyebrow { margin-bottom: .2rem; }
+    .artwork-spark { color: #b98a68; font-size: 1.25rem; line-height: 1; padding-bottom: .4rem; }
+    .artwork-caption {
+      padding: .55rem .45rem .15rem;
+      color: var(--slate);
+      font-size: .76rem;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .site-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .7rem 1rem; border-top: 1px solid var(--edge); padding: 1.1rem 0 0; }
+    .footer-actions { display: inline-flex; align-items: center; gap: .6rem; }
+    .site-footer a { font-weight: 600; text-decoration: none; }
+    .site-footer a:hover { text-decoration: underline; }
+    :where(.story-card,.section-more,.credentials-toggle,.credential-card,.download-link):focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 3px;
+    }
+    @media (max-width: 820px) {
+      .story-grid, .credential-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media (max-width: 639px) {
+      .downloads-section { padding: 1.25rem; }
+      .downloads-links { width: 100%; }
+      .download-link { flex: 1 1 170px; }
+      .site-footer { justify-content: center; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .story-card,.story-arrow,.credential-card,.download-link,.section-more { transition: none; }
+      .story-card:hover,.credential-card:hover,.download-link:hover { transform: none; }
+    }
+
+    .download-link { cursor: pointer; font-family: inherit; }
+    .request-dialog {
+      position: fixed; inset: 0; margin: auto; padding: 0;
+      width: min(440px, calc(100% - 2rem)); max-width: 440px;
+      max-height: 88dvh; overflow-y: auto;
+      color: var(--navy); background: white;
+      border: 1px solid var(--edge); border-radius: 19px;
+      box-shadow: 0 22px 70px rgba(20,43,69,.22);
+    }
+    .request-dialog::backdrop { background: rgba(16,33,52,.54); backdrop-filter: blur(3px); }
+    .request-dialog-inner { position: relative; padding: clamp(1.4rem, 4vw, 2rem); }
+    .request-close {
+      position: absolute; top: 1rem; right: 1rem;
+      width: 36px; height: 36px; border-radius: 10px;
+      border: 1px solid var(--edge); background: #fff;
+      color: var(--slate); cursor: pointer; font-size: 1.4rem; line-height: 1;
+    }
+    .request-close:hover { background: var(--page); }
+    .request-lock {
+      width: 46px; height: 46px; display: grid; place-items: center;
+      color: var(--teal); background: #edf7f7; border: 1px solid #b4d8d5;
+      border-radius: 13px; margin-bottom: 1.2rem; font-size: 1.3rem;
+    }
+    #request-title { font-weight: 750; font-size: 1.7rem; letter-spacing: -.03em; margin: .2rem 0 .8rem; }
+    #request-description, #request-specific { color: var(--slate); font-size: .93rem; line-height: 1.7; margin: 0 0 .8rem; }
+    #request-specific { margin-bottom: 1.35rem; }
+    .request-mailto {
+      min-height: 46px; display: flex; align-items: center; justify-content: center;
+      padding: .8rem 1rem; border-radius: 11px; background: var(--action);
+      color: white; text-decoration: none; font-weight: 700; font-size: .9rem;
+    }
+    .request-mailto:hover { background: var(--action-hover); }
+    .request-footnote { font-size: .75rem; line-height: 1.5; color: #718092; text-align: center; margin: .8rem 0 0; }
+    .request-close:focus-visible,.request-mailto:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans p-6">
-  <main class="max-w-4xl mx-auto">
-    <!-- Hero Card: Photo + Intro + Featured Art -->
-    <section class="bg-white rounded-2xl shadow p-6 mb-12">
-      <div class="grid sm:grid-cols-2 gap-6 items-end">
-        <!-- Photo: smaller size -->
-        <img src="assets/beykan-photo.jpg" alt="Beykan Gözümoğulları" class="max-w-xs w-full rounded-lg object-cover">
+<body class="site-page font-sans p-4 sm:p-6">
+  <main id="top" class="max-w-4xl mx-auto site-main">
+    <section class="intro-panel rounded-2xl soft-elevation p-5 sm:p-7 mb-12" aria-label="About me">
+      <div class="grid sm:grid-cols-2 gap-6 items-start">
+        <img src="assets/beykan-photo.jpg" alt="Beykan Gözümoğulları holding one of his paintings" class="profile-photo max-w-xs w-full rounded-lg object-cover" fetchpriority="high" decoding="async">
         <div>
-          <h2 class="text-3xl font-bold mb-2">I'm Beykan 👋</h2>
-          <p class="text-gray-700 mb-4">By day, I deliver SAP MDG solutions; by night, I bring ideas to life on canvas. Welcome to my corner of tech and art!</p>
-          <div class="flex space-x-4 mb-6">
-            <a href="https://github.com/beykangozumogullari" target="_blank" class="underline">GitHub</a>
-            <a href="https://www.linkedin.com/in/beykan" target="_blank" class="underline">LinkedIn</a>
+          <h1 class="intro-heading text-3xl font-bold mb-2">I'm Beykan 👋</h1>
+          <p class="intro-description mb-4">By day, I deliver SAP MDG solutions; by night, I bring ideas to life on canvas. Welcome to my corner of tech and art!</p>
+          <nav class="flex items-center gap-3 mb-6" aria-label="Professional profiles">
+            <a href="https://www.linkedin.com/in/beykan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn">
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>
+            </a>
+            <a href="https://community.sap.com/t5/user/viewprofilepage/user-id/838540" target="_blank" rel="noopener noreferrer" class="social-link social-link--sap" aria-label="SAP Community (opens in a new tab)" title="SAP Community">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M0 6.064v11.872h12.13L24 6.064zm3.264 2.208h.005c.863.001 1.915.245 2.676.633l-.82 1.43c-.835-.404-1.255-.442-1.73-.467-.708-.038-1.064.215-1.069.488-.007.332.669.633 1.305.838.964.306 2.19.715 2.377 1.9L7.77 8.437h2.046l2.064 5.576-.007-5.575h2.37c2.257 0 3.318.764 3.318 2.519 0 1.575-1.09 2.514-2.936 2.514h-.763l-.01 2.094-3.588-.003-.25-.908c-.37.122-.787.189-1.23.189-.456 0-.885-.071-1.263-.2l-.358.919-2 .006.09-.462c-.029.025-.057.05-.087.074-.535.43-1.208.629-2.037.644l-.213.002a5.075 5.075 0 0 1-2.581-.675l.73-1.448c.79.467 1.286.572 1.956.558.347-.007.598-.07.761-.239a.557.557 0 0 0 .156-.369c.007-.376-.53-.553-1.185-.756-.531-.164-1.135-.389-1.606-.735-.559-.41-.825-.924-.812-1.65a1.99 1.99 0 0 1 .566-1.377c.519-.537 1.357-.863 2.363-.863zm10.597 1.67v1.904h.521c.694 0 1.247-.23 1.248-.964 0-.709-.554-.94-1.248-.94zm-5.087.767l-.748 2.362c.223.085.481.133.757.133.268 0 .52-.047.742-.126l-.736-2.37z"/></svg>
+            </a>
+            <a href="https://github.com/beykangozumogullari" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub (opens in a new tab)" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+          </nav>
+          <div class="artwork-heading-row">
+            <div>
+              <span class="section-eyebrow">AWAY FROM THE KEYBOARD</span>
+              <h2 class="artwork-heading text-2xl font-semibold">Featured artwork</h2>
+            </div>
+            <span class="artwork-spark" aria-hidden="true">✳</span>
           </div>
-          <!-- Featured Artwork moved under links, smaller size -->
-          <h3 class="text-2xl font-semibold mb-3">Featured Artwork</h3>
-          <img src="assets/beykan-art.jpg" alt="Featured Artwork" class="w-full rounded-lg object-cover">
+          <figure class="artwork-frame">
+            <img src="assets/beykan-art.jpg" alt="A winter-night landscape painting by Beykan" class="artwork-photo w-full rounded-lg object-cover" loading="lazy" decoding="async">
+            <figcaption class="artwork-caption">A little canvas time after the code.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- SAP MDG Solutions Section -->
-    <section class="mb-10">
-      <button onclick="toggleSection('mdg-solutions', 'icon-mdg')" class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
-        <span class="text-2xl font-semibold">SAP MDG Solutions</span>
-        <span id="icon-mdg" class="transform transition-transform">&#9660;</span>
-      </button>
-      <div id="mdg-solutions" class="mt-4 grid sm:grid-cols-2 gap-6 hidden">
-        <a href="#" class="block p-5 border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
-          <h3 class="text-xl font-semibold">Company Code Creation</h3>
-          <p class="text-sm text-gray-600 mt-1">A guide on extending company codes using MDG-F in CR types.</p>
+
+    <!-- Selected writing: visible by default, with one featured story. -->
+    <section id="writing" class="content-section writing-section" aria-labelledby="writing-title">
+      <div class="section-heading">
+        <div>
+          <span class="section-eyebrow">FROM THE SAP NOTEBOOK</span>
+          <h2 id="writing-title">Things I've written</h2>
+          <p>Notes, experiments, and solutions I've shared along the way.</p>
+        </div>
+        <a class="section-more" href="https://community.sap.com/t5/user/viewprofilepage/user-id/838540" target="_blank" rel="noopener noreferrer">SAP Community <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="story-grid">
+        <a class="story-card" href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-members/preventing-data-loss-during-replication-with-partial-data-model/ba-p/13851758" target="_blank" rel="noopener noreferrer" aria-label="Preventing Data Loss During Replication with Partial Data Model (opens in a new tab)">
+          <span class="story-category">SAP MDG • Replication</span>
+          <h3>Preventing Data Loss During Replication with Partial Data Model</h3>
+          <p>This SAP Blog discusses a strategy for preventing the unintended deletion of reduced XML payloads.</p>
+          <span class="story-cta" aria-hidden="true">Read the article <span class="story-arrow">↗</span></span>
         </a>
-        <a href="#" class="block p-5 border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
-          <h3 class="text-xl font-semibold">BP Role Configuration</h3>
-          <p class="text-sm text-gray-600 mt-1">Steps to configure FLVN00 and FLCU00 roles in MDG-BP flow.</p>
+        <a class="story-card" href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-members/bringing-cdq-to-sap-mdg-classic-mode-enabling-trusted-business-partner/ba-p/14147382" target="_blank" rel="noopener noreferrer" aria-label="Bringing CDQ to SAP MDG Classic Mode (opens in a new tab)">
+          <span class="story-category">SAP MDG • CDQ</span>
+          <h3>Bringing CDQ to SAP MDG Classic Mode</h3>
+          <p>This article explores an approach to achieve that goal by integrating CDQ reference data in SAP Master Data Governance (MDG) classic mode.</p>
+          <span class="story-cta" aria-hidden="true">Read the article <span class="story-arrow">↗</span></span>
+        </a>
+        <a class="story-card" href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-members/strengthening-financial-master-data-with-cdq-s-bank-account-api-real-time/ba-p/14204135" target="_blank" rel="noopener noreferrer" aria-label="Strengthening Financial Master Data with CDQ's Bank Account API (opens in a new tab)">
+          <span class="story-category">Financial data • CDQ</span>
+          <h3>Strengthening Financial Master Data with CDQ's Bank Account API</h3>
+          <p>This blog post demonstrates how to integrate CDQ's Bank Account Data API into SAP MDG to detect and warn about known fraud cases in real time.</p>
+          <span class="story-cta" aria-hidden="true">Read the article <span class="story-arrow">↗</span></span>
         </a>
       </div>
     </section>
 
-    <!-- SAP CDS Examples Section -->
-    <section class="mb-10">
-      <button onclick="toggleSection('cds-examples', 'icon-cds')" class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow hover:bg-gray-100 transition">
-        <span class="text-2xl font-semibold">SAP CDS Examples</span>
-        <span id="icon-cds" class="transform transition-transform">&#9660;</span>
+    <!-- Credentials stay expandable, so the page remains lightweight. -->
+    <section id="credentials" class="content-section credentials-section" aria-labelledby="certifications-title">
+      <button type="button" onclick="toggleSection('sap-certifications')" aria-expanded="false" aria-controls="sap-certifications" class="credentials-toggle soft-elevation-interactive">
+        <span class="credentials-lead">
+          <span class="section-eyebrow">A LITTLE OFFICIAL PROOF</span>
+          <span id="certifications-title" class="credentials-heading">SAP certifications</span>
+          <span class="credentials-description">Three verifiable credentials, if you'd like to take a look.</span>
+        </span>
+        <span class="toggle-icon" aria-hidden="true">&#9660;</span>
       </button>
-      <div id="cds-examples" class="mt-4 grid sm:grid-cols-2 gap-6 hidden">
-        <a href="#" class="block p-5 border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
-          <h3 class="text-xl font-semibold">Custom CDS View for BP Address</h3>
-          <p class="text-sm text-gray-600 mt-1">Example of a CDS view combining business partner and address data.</p>
-        </a>
-        <a href="#" class="block p-5 border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition">
-          <h3 class="text-xl font-semibold">Analytical CDS View</h3>
-          <p class="text-sm text-gray-600 mt-1">Demo of CDS view with annotations for analytics and KPI tracking.</p>
-        </a>
+      <div id="sap-certifications" class="accordion-panel" aria-hidden="true" inert>
+        <div class="accordion-panel-inner credential-grid">
+          <a class="credential-card" href="https://www.credly.com/badges/881c77b4-2cb4-4958-8571-4d231edf5060" target="_blank" rel="noopener noreferrer" aria-label="SAP Certified - SAP Generative AI Developer (opens in a new tab)">
+            <span class="credential-icon" aria-hidden="true">✓</span>
+            <span class="credential-copy">
+              <span class="credential-area">Generative AI</span>
+              <strong>C_AIG_2604</strong>
+              <span>SAP Certified - SAP Generative AI Developer</span>
+            </span>
+            <span class="credential-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="credential-card" href="https://www.credly.com/badges/006a24a2-5a2f-4efa-8fc8-aaf9375748ee/public_url" target="_blank" rel="noopener noreferrer" aria-label="SAP Certified - Back-End Developer - ABAP Cloud (opens in a new tab)">
+            <span class="credential-icon" aria-hidden="true">✓</span>
+            <span class="credential-copy">
+              <span class="credential-area">ABAP Cloud</span>
+              <strong>C_ABAPD_2309</strong>
+              <span>SAP Certified - Back-End Developer - ABAP Cloud</span>
+            </span>
+            <span class="credential-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="credential-card" href="https://www.credly.com/badges/219fe687-2725-4956-a084-dd413ef846b9/public_url" target="_blank" rel="noopener noreferrer" aria-label="SAP Certified Application Associate - SAP Master Data Governance S/4HANA 1909 (opens in a new tab)">
+            <span class="credential-icon" aria-hidden="true">✓</span>
+            <span class="credential-copy">
+              <span class="credential-area">SAP MDG</span>
+              <strong>C_MDG_1909</strong>
+              <span>SAP Certified Application Associate - SAP Master Data Governance S/4HANA 1909</span>
+            </span>
+            <span class="credential-arrow" aria-hidden="true">↗</span>
+          </a>
+          <p class="certification-aside">Three blog posts. Three certifications. Just a tiny obsession with symmetry.</p>
+        </div>
       </div>
     </section>
 
-    <footer class="mt-16 text-center text-sm text-gray-500">
-      Built by Beykan • <a href="mailto:your.email@example.com" class="underline">Contact me</a>
+    <!-- Useful downloads should not require opening an accordion. -->
+    <section id="downloads" class="content-section downloads-section" aria-labelledby="downloads-title">
+      <div class="downloads-copy">
+        <span class="section-eyebrow">THE PRACTICAL STUFF</span>
+        <h2 id="downloads-title">Resume &amp; consultant profile</h2>
+        <p>Curious about the details? Just ask.</p>
+      </div>
+      <div class="downloads-links">
+        <button type="button" class="download-link download-link--primary" data-document-request="resume"><span aria-hidden="true">✉</span> Request resume</button>
+        <button type="button" class="download-link download-link--secondary" data-document-request="consultant profile"><span aria-hidden="true">✉</span> Request consultant profile</button>
+      </div>
+    </section>
+
+    <dialog id="request-dialog" class="request-dialog" aria-labelledby="request-title" aria-describedby="request-description">
+      <div class="request-dialog-inner">
+        <button type="button" class="request-close" aria-label="Close dialog" id="request-close">×</button>
+        <span class="request-lock" aria-hidden="true">✉</span>
+        <span class="section-eyebrow">A QUICK NOTE</span>
+        <h2 id="request-title">Let's get in touch!</h2>
+        <p id="request-description">My resume and consultant profile contain personal contact information, so I share them by email instead of making them publicly downloadable.</p>
+        <p id="request-specific">I'd be happy to share a copy. Just send me a quick note!</p>
+        <a id="request-mailto" class="request-mailto" href="mailto:beykangozumogullari@gmail.com">✉ &nbsp; Prepare email request</a>
+        <p class="request-footnote">This opens your email app with an editable message. Nothing is sent automatically.</p>
+      </div>
+    </dialog>
+
+    <footer class="site-footer mt-16 text-center text-sm">
+      <span>Built by Beykan · A corner of tech &amp; art</span>
+      <span class="footer-actions"><a href="mailto:beykangozumogullari@gmail.com">Contact me</a><span aria-hidden="true">·</span><a href="#top">Back to top ↑</a></span>
     </footer>
   </main>
 
   <script>
-    function toggleSection(sectionId, iconId) {
-      const section = document.getElementById(sectionId);
-      const icon = document.getElementById(iconId);
-      if (section.classList.contains('hidden')) {
-        section.classList.remove('hidden');
-        icon.style.transform = 'rotate(180deg)';
-      } else {
-        section.classList.add('hidden');
-        icon.style.transform = 'rotate(0deg)';
-      }
+    function toggleSection(sectionId) {
+      const panel = document.getElementById(sectionId);
+      const button = document.querySelector('[aria-controls="' + sectionId + '"]');
+      if (!panel || !button) return;
+      const willOpen = button.getAttribute('aria-expanded') !== 'true';
+      button.setAttribute('aria-expanded', String(willOpen));
+      panel.setAttribute('aria-hidden', String(!willOpen));
+      panel.inert = !willOpen;
     }
+
+    const requestDialog = document.getElementById('request-dialog');
+    const requestMailto = document.getElementById('request-mailto');
+    const requestSpecific = document.getElementById('request-specific');
+    let requestTrigger = null;
+    document.querySelectorAll('[data-document-request]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const documentName = button.dataset.documentRequest;
+        const isResume = documentName === 'resume';
+        if (!isResume && documentName !== 'consultant profile') return;
+        const subject = isResume
+          ? 'Resume request - personal website'
+          : 'Consultant profile request - personal website';
+        const body = [
+          'Hi Beykan,',
+          '',
+          'I found your personal website and would like to request a copy of your ' + documentName + '.',
+          '',
+          'My name is [Your name], and I am reaching out regarding [opportunity / reason].',
+          '',
+          'Thanks,',
+          '[Your name]'
+        ].join('\n');
+        requestMailto.href = 'mailto:beykangozumogullari@gmail.com?subject='
+          + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        requestSpecific.textContent = 'Interested in my ' + documentName + '? I would be happy to share it. Just send me a quick note!';
+        requestTrigger = button;
+        requestDialog.showModal();
+        requestMailto.focus();
+      });
+    });
+    document.getElementById('request-close').addEventListener('click', () => requestDialog.close());
+    requestDialog.addEventListener('click', (event) => {
+      if (event.target === requestDialog) requestDialog.close();
+    });
+    requestDialog.addEventListener('close', () => {
+      if (requestTrigger) requestTrigger.focus();
+      requestTrigger = null;
+    });
   </script>
 </body>
 </html>
